@@ -57,7 +57,7 @@ classDiagram
     }
 
     class Sale {
-        -Client client
+        -"Client" client
         -ArrayList~Product~ products
         -Amount amount
     }
@@ -83,11 +83,11 @@ classDiagram
         +pay(amount) void
     }
 
-    interface Logable {
+    interface "Logable" {
         +login(user, pw) void
     }
 
-    interface Payable {
+    interface "Payable" {
         +pay(amount) void
     }
 
@@ -98,7 +98,7 @@ classDiagram
     Sale "1" --> "1" Client : has-a
     Employee --|> Person : extends
     Client --|> Person : extends
-    Employee ..|> Logable : implements
-    Client ..|> Payable : implements
+    Employee ..|> "Logable" : implements
+    Client ..|> "Payable" : implements
 ```
 
